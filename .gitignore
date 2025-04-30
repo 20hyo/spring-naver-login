@@ -1,0 +1,11 @@
+.gradle/
+.vscode/
+build/
+gradle/
+
+# 파일들
+.env
+gradlew
+gradlew.bat
+HELP.md
+settings.gradle

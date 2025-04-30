@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Naver Login Example</h1>
+
+    <div th:if="${userInfo != null}">
+        <p>Logged in as: <span th:text="${userInfo.email}"></span></p>
+        <a href="#" th:href="@{/logout}">Logout</a>
+    </div>
+    <div th:if="${userInfo == null}">
+        <a href="/oauth2/authorization/naver">네이버 로그인</a>
+    </div>
+</body>
+</html>
