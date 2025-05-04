@@ -2,16 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Home</title>
+    <style>
+        .user-info {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to the Naver Login Example</h1>
 
-    <div th:if="${userInfo != null}">
-        <p>Logged in as: <span th:text="${userInfo.email}"></span></p>
-        <a href="#" th:href="@{/logout}">Logout</a>
+    <div th:if="${userInfo != null}" class="user-info">
+        <h2>사용자 정보</h2>
+        <p>이름: <strong th:text="${userInfo.name}"></strong></p>
+        <p>이메일: <strong th:text="${userInfo.email}"></strong></p>
+        <a href="#" th:href="@{/logout}">로그아웃</a>
     </div>
     <div th:if="${userInfo == null}">
-        <a href="/oauth2/authorization/naver">네이버 로그인</a>
+        <a href="/custom-login/naver">네이버 로그인</a>
     </div>
 </body>
 </html>
